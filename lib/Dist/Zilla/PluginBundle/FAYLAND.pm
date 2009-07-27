@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::FAYLAND;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 # ABSTRACT: Dist::Zilla like FAYLAND when you build your dists
 
@@ -20,18 +20,19 @@ sub bundle_config {
         }
     );
 
-    push @plugins,
-      (
-        [ 'Dist::Zilla::Plugin::PodWeaver'      => {} ],
-        [ 'Dist::Zilla::Plugin::PerlTidy'       => {} ],
-        [ 'Dist::Zilla::Plugin::Repository'     => {} ],
-        [ 'Dist::Zilla::Plugin::ReadmeFromPod'  => {} ],
-        [ 'Dist::Zilla::Plugin::CheckChangeLog' => {} ],
+    my $prefix = 'Dist::Zilla::Plugin::';
+    my @extra =
+      map { [ "$class/$prefix$_->[0]" => "$prefix$_->[0]" => $_->[1] ] } (
+        [ PodWeaver      => {} ],
+        [ PerlTidy       => {} ],
+        [ Repository     => {} ],
+        [ ReadmeFromPod  => {} ],
+        [ CheckChangeLog => {} ],
       );
 
-    eval "require $_->[0]" or die for @plugins;    ## no critic Carp
+    push @plugins, @extra;
 
-    @plugins->map( sub { $_->[1]{'=name'} = "$class/$_->[0]" } );
+    eval "require $_->[1]; 1;" or die for @plugins;    ## no critic Carp
 
     return @plugins;
 }
@@ -49,7 +50,7 @@ Dist::Zilla::PluginBundle::FAYLAND - Dist::Zilla like FAYLAND when you build you
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
