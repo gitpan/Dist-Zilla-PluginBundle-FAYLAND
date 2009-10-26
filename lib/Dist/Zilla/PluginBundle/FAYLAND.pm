@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::FAYLAND;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # ABSTRACT: Dist::Zilla like FAYLAND when you build your dists
 
@@ -10,13 +10,18 @@ with 'Dist::Zilla::Role::PluginBundle';
 use Dist::Zilla::PluginBundle::Filter;
 
 sub bundle_config {
-    my ( $self, $arg ) = @_;
+    my ( $self, $section ) = @_;
     my $class = ( ref $self ) || $self;
+
+    my $arg = $section->{payload};
 
     my @plugins = Dist::Zilla::PluginBundle::Filter->bundle_config(
         {
-            bundle => '@Classic',
-            remove => [qw(PodVersion BumpVersion)],
+            name    => "$class/Classic",
+            payload => {
+                bundle => '@Classic',
+                remove => [qw(PodVersion BumpVersion)],
+            }
         }
     );
 
@@ -44,13 +49,15 @@ no Moose;
 
 __END__
 
+=pod
+
 =head1 NAME
 
 Dist::Zilla::PluginBundle::FAYLAND - Dist::Zilla like FAYLAND when you build your dists
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
@@ -80,3 +87,5 @@ This software is copyright (c) 2009 by Fayland Lam.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as perl itself.
+
+=cut

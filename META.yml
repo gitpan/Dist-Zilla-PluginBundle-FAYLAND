@@ -2,19 +2,19 @@
 abstract: 'Dist::Zilla like FAYLAND when you build your dists'
 author:
   - 'Fayland Lam <fayland@gmail.com>'
-generated_by: 'Dist::Zilla::Plugin::MetaYAML version 1.092071'
+generated_by: 'Dist::Zilla version 1.092990'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Dist-Zilla-PluginBundle-FAYLAND
 requires:
-  Dist::Zilla: 1.092071
+  Dist::Zilla: 1.092990
   Dist::Zilla::Plugin::CheckChangeLog: 0.01
-  Dist::Zilla::Plugin::PerlTidy: 0.04
-  Dist::Zilla::Plugin::PodWeaver: 2.000
+  Dist::Zilla::Plugin::PerlTidy: 0.06
+  Dist::Zilla::Plugin::PodWeaver: 3.092971
   Dist::Zilla::Plugin::ReadmeFromPod: 0.03
   Dist::Zilla::Plugin::Repository: 0.08
 resources:
   repository: http://github.com/fayland/dist-zilla-pluginbundle-fayland/tree
-version: 0.02
+version: 0.03
