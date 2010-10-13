@@ -1,5 +1,8 @@
 package Dist::Zilla::PluginBundle::FAYLAND;
-our $VERSION = '0.03';
+
+BEGIN {
+    $Dist::Zilla::PluginBundle::FAYLAND::VERSION = '0.04';
+}
 
 # ABSTRACT: Dist::Zilla like FAYLAND when you build your dists
 
@@ -33,6 +36,7 @@ sub bundle_config {
         [ Repository     => {} ],
         [ ReadmeFromPod  => {} ],
         [ CheckChangeLog => {} ],
+        [ CompileTests   => {} ],
       );
 
     push @plugins, @extra;
@@ -57,7 +61,7 @@ Dist::Zilla::PluginBundle::FAYLAND - Dist::Zilla like FAYLAND when you build you
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -76,16 +80,17 @@ It is equivalent to:
     [Repository]
     [ReadmeFromPod]
     [CheckChangeLog]
+    [CompileTests]
 
 =head1 AUTHOR
 
-  Fayland Lam <fayland@gmail.com>
+Fayland Lam <fayland@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by Fayland Lam.
+This software is copyright (c) 2010 by Fayland Lam.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
 
 =cut
