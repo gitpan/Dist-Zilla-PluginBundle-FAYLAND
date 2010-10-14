@@ -1,7 +1,7 @@
 package Dist::Zilla::PluginBundle::FAYLAND;
 
 BEGIN {
-    $Dist::Zilla::PluginBundle::FAYLAND::VERSION = '0.04';
+    $Dist::Zilla::PluginBundle::FAYLAND::VERSION = '0.05';
 }
 
 # ABSTRACT: Dist::Zilla like FAYLAND when you build your dists
@@ -61,7 +61,7 @@ Dist::Zilla::PluginBundle::FAYLAND - Dist::Zilla like FAYLAND when you build you
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
