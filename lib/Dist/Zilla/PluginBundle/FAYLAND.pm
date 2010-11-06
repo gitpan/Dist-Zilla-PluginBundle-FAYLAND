@@ -1,7 +1,7 @@
 package Dist::Zilla::PluginBundle::FAYLAND;
 
 BEGIN {
-    $Dist::Zilla::PluginBundle::FAYLAND::VERSION = '0.05';
+    $Dist::Zilla::PluginBundle::FAYLAND::VERSION = '0.06';
 }
 
 # ABSTRACT: Dist::Zilla like FAYLAND when you build your dists
@@ -36,7 +36,7 @@ sub bundle_config {
         [ Repository     => {} ],
         [ ReadmeFromPod  => {} ],
         [ CheckChangeLog => {} ],
-        [ CompileTests   => {} ],
+        [ LoadTests      => {} ],
       );
 
     push @plugins, @extra;
@@ -61,7 +61,7 @@ Dist::Zilla::PluginBundle::FAYLAND - Dist::Zilla like FAYLAND when you build you
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -80,7 +80,7 @@ It is equivalent to:
     [Repository]
     [ReadmeFromPod]
     [CheckChangeLog]
-    [CompileTests]
+    [LoadTests]
 
 =head1 AUTHOR
 

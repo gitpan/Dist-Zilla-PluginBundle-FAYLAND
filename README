@@ -3,7 +3,7 @@ NAME
     build your dists
 
 VERSION
-    version 0.05
+    version 0.06
 
 SYNOPSIS
         # dist.ini
@@ -21,7 +21,7 @@ SYNOPSIS
         [Repository]
         [ReadmeFromPod]
         [CheckChangeLog]
-        [CompileTests]
+        [LoadTests]
 
 AUTHOR
     Fayland Lam <fayland@gmail.com>
