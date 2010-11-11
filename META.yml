@@ -22,4 +22,4 @@ requires:
   Dist::Zilla::Plugin::Repository: 0.08
 resources:
   repository: http://github.com/fayland/dist-zilla-pluginbundle-fayland
-version: 0.06
+version: 0.07
