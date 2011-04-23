@@ -4,7 +4,7 @@
       "Fayland Lam <fayland@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.102342, CPAN::Meta::Converter version 2.102400",
+   "generated_by" : "Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.102400",
    "license" : [
       "perl_5"
    ],
@@ -23,7 +23,7 @@
          "requires" : {
             "Dist::Zilla" : "1.092990",
             "Dist::Zilla::Plugin::CheckChangeLog" : "0.01",
-            "Dist::Zilla::Plugin::LoadTests" : "0.05",
+            "Dist::Zilla::Plugin::CompileTests" : "0.05",
             "Dist::Zilla::Plugin::PerlTidy" : "0.06",
             "Dist::Zilla::Plugin::PodWeaver" : "3.092971",
             "Dist::Zilla::Plugin::ReadmeFromPod" : "0.03",
@@ -34,9 +34,11 @@
    "release_status" : "stable",
    "resources" : {
       "repository" : {
-         "url" : "http://github.com/fayland/dist-zilla-pluginbundle-fayland"
+         "type" : "git",
+         "url" : "git://github.com/fayland/dist-zilla-pluginbundle-fayland.git",
+         "web" : "http://github.com/fayland/dist-zilla-pluginbundle-fayland"
       }
    },
-   "version" : "0.07"
+   "version" : "0.08"
 }
 
