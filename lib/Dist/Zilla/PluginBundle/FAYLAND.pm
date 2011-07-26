@@ -1,7 +1,7 @@
 package Dist::Zilla::PluginBundle::FAYLAND;
 
 BEGIN {
-    $Dist::Zilla::PluginBundle::FAYLAND::VERSION = '0.08';
+    $Dist::Zilla::PluginBundle::FAYLAND::VERSION = '0.09';
 }
 
 # ABSTRACT: Dist::Zilla like FAYLAND when you build your dists
@@ -23,7 +23,7 @@ sub bundle_config {
             name    => "$class/Classic",
             payload => {
                 bundle => '@Classic',
-                remove => [qw(PodVersion BumpVersion)],
+                remove => [qw(PodVersion BumpVersion Readme)],
             }
         }
     );
@@ -62,7 +62,7 @@ Dist::Zilla::PluginBundle::FAYLAND - Dist::Zilla like FAYLAND when you build you
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -75,6 +75,7 @@ It is equivalent to:
     bundle = @Classic
     remove = PodVersion
     remove = BumpVersion
+    remove = Readme
 
     [PodWeaver]
     [PerlTidy]

@@ -3,7 +3,7 @@ NAME
     build your dists
 
 VERSION
-    version 0.08
+    version 0.09
 
 SYNOPSIS
         # dist.ini
@@ -15,6 +15,7 @@ SYNOPSIS
         bundle = @Classic
         remove = PodVersion
         remove = BumpVersion
+        remove = Readme
 
         [PodWeaver]
         [PerlTidy]
