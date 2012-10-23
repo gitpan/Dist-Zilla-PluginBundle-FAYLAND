@@ -1,7 +1,6 @@
 package Dist::Zilla::PluginBundle::FAYLAND;
-
-BEGIN {
-    $Dist::Zilla::PluginBundle::FAYLAND::VERSION = '0.09';
+{
+    $Dist::Zilla::PluginBundle::FAYLAND::VERSION = '0.10';
 }
 
 # ABSTRACT: Dist::Zilla like FAYLAND when you build your dists
@@ -31,13 +30,13 @@ sub bundle_config {
     my $prefix = 'Dist::Zilla::Plugin::';
     my @extra =
       map { [ "$class/$prefix$_->[0]" => "$prefix$_->[0]" => $_->[1] ] } (
-        [ PodWeaver      => {} ],
-        [ PerlTidy       => {} ],
-        [ Repository     => {} ],
-        [ ReadmeFromPod  => {} ],
-        [ CheckChangeLog => {} ],
-        [ CompileTests   => {} ],
-        [ MetaJSON       => {} ],
+        [ PodWeaver       => {} ],
+        [ PerlTidy        => {} ],
+        [ Repository      => {} ],
+        [ ReadmeFromPod   => {} ],
+        [ CheckChangeLog  => {} ],
+        [ 'Test::Compile' => {} ],
+        [ MetaJSON        => {} ],
       );
 
     push @plugins, @extra;
@@ -62,7 +61,7 @@ Dist::Zilla::PluginBundle::FAYLAND - Dist::Zilla like FAYLAND when you build you
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 
@@ -82,7 +81,7 @@ It is equivalent to:
     [Repository]
     [ReadmeFromPod]
     [CheckChangeLog]
-    [CompileTests]
+    [Test::Compile]
     [MetaJSON]
 
 =head1 AUTHOR
@@ -91,7 +90,7 @@ Fayland Lam <fayland@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Fayland Lam.
+This software is copyright (c) 2012 by Fayland Lam.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

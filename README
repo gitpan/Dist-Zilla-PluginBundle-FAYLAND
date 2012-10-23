@@ -3,7 +3,7 @@ NAME
     build your dists
 
 VERSION
-    version 0.09
+    version 0.10
 
 SYNOPSIS
         # dist.ini
@@ -22,14 +22,14 @@ SYNOPSIS
         [Repository]
         [ReadmeFromPod]
         [CheckChangeLog]
-        [CompileTests]
+        [Test::Compile]
         [MetaJSON]
 
 AUTHOR
     Fayland Lam <fayland@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2011 by Fayland Lam.
+    This software is copyright (c) 2012 by Fayland Lam.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
