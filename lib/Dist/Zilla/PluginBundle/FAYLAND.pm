@@ -1,6 +1,6 @@
 package Dist::Zilla::PluginBundle::FAYLAND;
 {
-    $Dist::Zilla::PluginBundle::FAYLAND::VERSION = '0.10';
+    $Dist::Zilla::PluginBundle::FAYLAND::VERSION = '0.11';
 }
 
 # ABSTRACT: Dist::Zilla like FAYLAND when you build your dists
@@ -30,13 +30,14 @@ sub bundle_config {
     my $prefix = 'Dist::Zilla::Plugin::';
     my @extra =
       map { [ "$class/$prefix$_->[0]" => "$prefix$_->[0]" => $_->[1] ] } (
-        [ PodWeaver       => {} ],
-        [ PerlTidy        => {} ],
-        [ Repository      => {} ],
-        [ ReadmeFromPod   => {} ],
-        [ CheckChangeLog  => {} ],
-        [ 'Test::Compile' => {} ],
-        [ MetaJSON        => {} ],
+        [ PodWeaver           => {} ],
+        [ PerlTidy            => {} ],
+        [ Repository          => {} ],
+        [ ReadmeFromPod       => {} ],
+        [ CheckChangeLog      => {} ],
+        [ 'Test::Compile'     => {} ],
+        [ MetaJSON            => {} ],
+        [ ContributorsFromGit => {} ]
       );
 
     push @plugins, @extra;
@@ -61,7 +62,7 @@ Dist::Zilla::PluginBundle::FAYLAND - Dist::Zilla like FAYLAND when you build you
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -90,7 +91,7 @@ Fayland Lam <fayland@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Fayland Lam.
+This software is copyright (c) 2013 by Fayland Lam.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

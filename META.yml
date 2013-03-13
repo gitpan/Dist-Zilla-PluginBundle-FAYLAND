@@ -6,7 +6,7 @@ build_requires: {}
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -15,6 +15,7 @@ name: Dist-Zilla-PluginBundle-FAYLAND
 requires:
   Dist::Zilla: 4.300028
   Dist::Zilla::Plugin::CheckChangeLog: 0.01
+  Dist::Zilla::Plugin::ContributorsFromGit: 0.004
   Dist::Zilla::Plugin::PerlTidy: 0.06
   Dist::Zilla::Plugin::PodWeaver: 3.092971
   Dist::Zilla::Plugin::ReadmeFromPod: 0.03
@@ -22,4 +23,7 @@ requires:
   Dist::Zilla::Plugin::Test::Compile: 0.05
 resources:
   repository: git://github.com/fayland/dist-zilla-pluginbundle-fayland.git
-version: 0.10
+version: 0.11
+x_contributors:
+  - 'Olivier Mengué <dolmen@cpan.org>'
+  - 'fayland <fayland@gmail.com>'

@@ -3,7 +3,7 @@ NAME
     build your dists
 
 VERSION
-    version 0.10
+    version 0.11
 
 SYNOPSIS
         # dist.ini
@@ -29,7 +29,7 @@ AUTHOR
     Fayland Lam <fayland@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2012 by Fayland Lam.
+    This software is copyright (c) 2013 by Fayland Lam.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
