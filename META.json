@@ -4,7 +4,7 @@
       "Fayland Lam <fayland@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 5.005, CPAN::Meta::Converter version 2.132830",
    "license" : [
       "perl_5"
    ],
@@ -28,14 +28,22 @@
       },
       "runtime" : {
          "requires" : {
-            "Dist::Zilla" : "4.300028",
+            "Dist::Zilla" : "5",
             "Dist::Zilla::Plugin::CheckChangeLog" : "0.01",
             "Dist::Zilla::Plugin::ContributorsFromGit" : "0.004",
             "Dist::Zilla::Plugin::PerlTidy" : "0.06",
             "Dist::Zilla::Plugin::PodWeaver" : "3.092971",
-            "Dist::Zilla::Plugin::ReadmeFromPod" : "0.03",
+            "Dist::Zilla::Plugin::ReadmeFromPod" : "0.20",
             "Dist::Zilla::Plugin::Repository" : "0.08",
             "Dist::Zilla::Plugin::Test::Compile" : "0.05"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "File::Spec" : "0",
+            "IO::Handle" : "0",
+            "IPC::Open3" : "0",
+            "Test::More" : "0"
          }
       }
    },
@@ -47,9 +55,9 @@
          "web" : "https://github.com/fayland/dist-zilla-pluginbundle-fayland"
       }
    },
-   "version" : "0.11",
+   "version" : "0.12",
    "x_contributors" : [
-      "Olivier Mengu\u00c3\u00a9 <dolmen@cpan.org>",
+      "Olivier Mengu\u00e9 <dolmen@cpan.org>",
       "fayland <fayland@gmail.com>"
    ]
 }

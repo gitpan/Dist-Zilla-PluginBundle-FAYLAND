@@ -3,7 +3,7 @@ NAME
     build your dists
 
 VERSION
-    version 0.11
+    version 0.12
 
 SYNOPSIS
         # dist.ini
@@ -18,11 +18,11 @@ SYNOPSIS
         remove = Readme
 
         [PodWeaver]
+        [Test::Compile]
         [PerlTidy]
         [Repository]
         [ReadmeFromPod]
         [CheckChangeLog]
-        [Test::Compile]
         [MetaJSON]
 
 AUTHOR

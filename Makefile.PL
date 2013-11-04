@@ -20,33 +20,48 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Dist::Zilla::PluginBundle::FAYLAND",
   "PREREQ_PM" => {
-    "Dist::Zilla" => "4.300028",
+    "Dist::Zilla" => 5,
     "Dist::Zilla::Plugin::CheckChangeLog" => "0.01",
     "Dist::Zilla::Plugin::ContributorsFromGit" => "0.004",
     "Dist::Zilla::Plugin::PerlTidy" => "0.06",
     "Dist::Zilla::Plugin::PodWeaver" => "3.092971",
-    "Dist::Zilla::Plugin::ReadmeFromPod" => "0.03",
+    "Dist::Zilla::Plugin::ReadmeFromPod" => "0.20",
     "Dist::Zilla::Plugin::Repository" => "0.08",
     "Dist::Zilla::Plugin::Test::Compile" => "0.05"
   },
-  "VERSION" => "0.11",
+  "TEST_REQUIRES" => {
+    "File::Spec" => 0,
+    "IO::Handle" => 0,
+    "IPC::Open3" => 0,
+    "Test::More" => 0
+  },
+  "VERSION" => "0.12",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
 
-unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
-  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
-  my $pp = $WriteMakefileArgs{PREREQ_PM};
-  for my $mod ( keys %$br ) {
-    if ( exists $pp->{$mod} ) {
-      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
-    }
-    else {
-      $pp->{$mod} = $br->{$mod};
-    }
-  }
+my %FallbackPrereqs = (
+  "Dist::Zilla" => 5,
+  "Dist::Zilla::Plugin::CheckChangeLog" => "0.01",
+  "Dist::Zilla::Plugin::ContributorsFromGit" => "0.004",
+  "Dist::Zilla::Plugin::PerlTidy" => "0.06",
+  "Dist::Zilla::Plugin::PodWeaver" => "3.092971",
+  "Dist::Zilla::Plugin::ReadmeFromPod" => "0.20",
+  "Dist::Zilla::Plugin::Repository" => "0.08",
+  "Dist::Zilla::Plugin::Test::Compile" => "0.05",
+  "File::Spec" => 0,
+  "IO::Handle" => 0,
+  "IPC::Open3" => 0,
+  "Test::More" => 0
+);
+
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  delete $WriteMakefileArgs{TEST_REQUIRES};
+  delete $WriteMakefileArgs{BUILD_REQUIRES};
+  $WriteMakefileArgs{PREREQ_PM} = \%FallbackPrereqs;
 }
 
 delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
